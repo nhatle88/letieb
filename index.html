@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Letieb · Chris Nhat Le</title>
+  <meta name="description" content="Letieb is the personal home of Chris Nhat Le: stories, notes, growth, work and family, from Ho Chi Minh City.">
+  <meta property="og:title" content="Letieb · Chris Nhat Le">
+  <meta property="og:description" content="Stories, notes, growth and work: a small home for my life.">
+  <meta property="og:image" content="https://letieb.com/images/portrait.jpg">
+  <meta property="og:url" content="https://letieb.com/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#top">Letieb</a>
+    <nav aria-label="Sections">
+      <a href="#story">Story</a>
+      <a href="#chapters">Chapters</a>
+      <a href="#notes">Notes</a>
+      <a href="#elsewhere">Elsewhere</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Welcome -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">A home for my stories</p>
+        <h1>Chris Nhat Le</h1>
+        <p class="lede">Builder, writer and father from Ho Chi Minh City. This is where I keep the story of my life, and where I point to the places the rest of it lives.</p>
+        <p class="meaning"><strong>Why Letieb?</strong> Read it backwards: <em>Beitel</em>, a home of God. This site is a small home for my life: the stories, notes, growth and work I want to keep.</p>
+      </div>
+      <figure class="portrait">
+        <img src="images/portrait.jpg" alt="Portrait of Chris Nhat Le" width="900" height="1350">
+      </figure>
+    </section>
+
+    <!-- My story -->
+    <section id="story" class="section">
+      <h2>My story</h2>
+      <div class="story">
+        <div class="story-part">
+          <h3>Roots</h3>
+          <p>I grew up in Ho Chi Minh City, a quiet kid who loved comic books, drawing, telling stories and math. Once I spent a whole week on a single hard math problem, with no internet, just a new notebook, and I still remember how it felt to solve it.</p>
+        </div>
+        <div class="story-part">
+          <h3>Building</h3>
+          <p>In 2011 I started my first company, and the next ten years became my first decade of building startups. It took me onto stages in Malaysia, Singapore, South Korea and Taiwan, and to exhibitions from Hong Kong to Paris and London. It also gave me low points that made me ask why I build at all. In 2021 I started again with AirCity: technology for safer, smarter places to live.</p>
+        </div>
+        <div class="story-part">
+          <h3>Now</h3>
+          <p>Today I'm a father, still building and still writing. I keep notes about time, mindset, faith and family, mostly for myself, and maybe one day for my children.</p>
+        </div>
+      </div>
+
+      <figure class="workspace">
+        <div class="workspace-grid">
+          <img src="images/workbench.jpg" alt="A pegboard of devices and tools under partner logos, next to a whiteboard full of diagrams" width="686" height="513" loading="lazy">
+          <img src="images/desk.jpg" alt="A desk with a laptop, a monitor showing code, an AirCity box and a camera feed screen" width="687" height="509" loading="lazy">
+        </div>
+        <figcaption>My old AirCity workspace. Devices on the wall, diagrams on the whiteboard. It's in the past, but I still like it.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Life timeline, rendered from data.js -->
+    <section id="chapters" class="section">
+      <h2>Chapters</h2>
+      <p class="section-intro">The moments that shaped me, from the start until now.</p>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <!-- Themes, rendered from data.js -->
+    <section id="care" class="section">
+      <h2>What I care about</h2>
+      <ul class="themes" id="themes"></ul>
+    </section>
+
+    <!-- Selected writing, rendered from data.js -->
+    <section id="notes" class="section">
+      <h2>Notes</h2>
+      <p class="section-intro">A few pieces I come back to. Everything else is on Substack.</p>
+      <ul class="notes" id="notes-list"></ul>
+      <a class="more-link" href="https://nhat.substack.com/archive">All notes on Substack →</a>
+    </section>
+
+    <!-- Links out, rendered from data.js -->
+    <section id="elsewhere" class="section">
+      <h2>Elsewhere</h2>
+      <p class="section-intro">The rest of my life lives in other places.</p>
+      <ul class="links" id="links"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="motto">It's my life.</p>
+    <p><a href="mailto:lehoangnhat88@gmail.com">lehoangnhat88@gmail.com</a> · Ho Chi Minh City</p>
+    <p class="small">© <span id="year">2026</span> Chris Nhat Le · letieb.com</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
