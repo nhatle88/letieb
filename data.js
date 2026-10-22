@@ -110,6 +110,8 @@ window.LETIEB = {
     { name: "LinkedIn", text: "My work and career", url: "https://www.linkedin.com/in/nhatle88" },
     { name: "Substack", text: "My notes and stories", url: "https://nhat.substack.com/" },
     { name: "Email", text: "Say hello", url: "mailto:lehoangnhat88@gmail.com" },
+    { name: "Books", text: "My reading tracker · sign in", url: "https://books.letieb.com" },
+    { name: "Finance", text: "Our family finances · sign in", url: "https://finance.letieb.com" },
     { name: "More to come", text: "Photos, books, projects…", url: null },
   ],
 };
