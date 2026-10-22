@@ -2,6 +2,68 @@
 // To add a chapter, note or link, copy one entry and edit it. No other file needs to change.
 
 window.LETIEB = {
+  // Career, from LinkedIn. Roles newest first; current: true highlights a role.
+  career: {
+    roles: [
+      {
+        when: "2026 – now",
+        title: "Board Advisor, Group Technology Strategy & Digital Transformation",
+        org: "Kim Oanh Group",
+        current: true,
+      },
+      {
+        when: "2022 – now",
+        title: "Founder & CEO",
+        org: "AirCity",
+        text: "A property management platform that automates about 70% of apartment management work. Backed by Antler and South Korean investors.",
+        url: "https://www.aircity.co",
+        current: true,
+      },
+      {
+        when: "2020 – 2022",
+        title: "Co-founder, CTO, then Deputy General Director of Technology",
+        org: "Houze",
+        text: "An online-to-offline platform for every real estate need in Vietnam. Vietnam Smart City Award 2020 for smart buildings.",
+      },
+      {
+        when: "2019 – 2020",
+        title: "CTO & Board Member",
+        org: "Housemap",
+        text: "Led the tech team building the products behind the company's strategy.",
+      },
+      {
+        when: "2016 – 2019",
+        title: "Co-founder & CEO",
+        org: "Ami Artificial Intelligence",
+        text: "IoT and AI connecting property managers and tenants. TechFest Vietnam winner 2017, 2nd prize at the HCMC Innovation Awards 2019, and featured in Forbes.",
+      },
+      {
+        when: "2012 – 2015",
+        title: "Bassist",
+        org: "Kaustic",
+        text: "A rock band. We wrote songs, played Hard Rock Cafe Saigon and reached the final of Tiger Translate Battle of the Bands.",
+      },
+      {
+        when: "2009 – 2012",
+        title: "Financial Research Assistant",
+        org: "Yuki Techno Flow",
+        text: "Analysing companies by their numbers, business models and history. Where I learned how businesses really work.",
+      },
+    ],
+    programs: [
+      { when: "2023", name: "Google for Startups Accelerator: Southeast Asia" },
+      { when: "2022", name: "BLOCK71 Saigon, by NUS Enterprise" },
+      { when: "2021", name: "Antler, Entrepreneur in Residence (VN1)" },
+      { when: "2017", name: "Global Accelerator Program, Kuala Lumpur" },
+      { when: "2017", name: "SLUSH Singapore, top 30" },
+    ],
+    education: [
+      { when: "2023 – 2027", name: "Golden Gate University", text: "Doctorate in Leadership and Strategy, in progress" },
+      { when: "2006 – 2013", name: "Ho Chi Minh City University of Technology", text: "Bachelor's, Computer Science and Engineering" },
+      { when: "2003 – 2006", name: "VNU-HCM High School for the Gifted", text: "Mathematics" },
+    ],
+  },
+
   // Life timeline, oldest first. tag: Family | Work | Growth | Travel | Faith
   // link is optional.
   chapters: [

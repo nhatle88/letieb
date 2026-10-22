@@ -266,6 +266,62 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 .tag-travel { color: var(--tag-travel); }
 .tag-faith { color: var(--tag-faith); }
 
+/* Career */
+.career {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(28px, 5vw, 56px);
+  margin-top: 32px;
+  align-items: start;
+}
+.roles { list-style: none; margin: 0; padding: 0; }
+.role {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: 20px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.role:first-child { border-top: none; padding-top: 0; }
+.role-when { font-family: var(--serif); font-size: 16px; color: var(--ink-faint); line-height: 1.5; }
+.role.is-current .role-when { color: var(--accent); }
+.role h3 { font-size: 21px; }
+.role-org {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+a.role-org { color: var(--accent); }
+a.role-org:hover { text-decoration: underline; }
+.role p { margin: 6px 0 0; color: var(--ink-soft); max-width: 58ch; }
+
+.career-side { display: flex; flex-direction: column; gap: 14px; }
+.career-card {
+  padding: 20px 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.career-card h3 {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.career-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.career-item { display: grid; grid-template-columns: 92px 1fr; column-gap: 12px; font-size: 15px; }
+.career-when { color: var(--ink-faint); grid-row: span 2; }
+.career-name { color: var(--ink); }
+.career-text { color: var(--ink-soft); font-size: 14px; }
+.career-side .more-link { margin-top: 4px; }
+
 /* Themes */
 .themes, .notes, .links { list-style: none; margin: 0; padding: 0; }
 .themes {
@@ -330,6 +386,7 @@ a.theme:hover, a.note:hover, a.link-card:hover { border-color: var(--accent); tr
 /* Tablet */
 @media (max-width: 860px) {
   .story { grid-template-columns: 1fr; }
+  .career { grid-template-columns: 1fr; }
   .themes { grid-template-columns: 1fr 1fr; }
   .links { grid-template-columns: 1fr 1fr; }
 }
@@ -350,12 +407,20 @@ a.theme:hover, a.note:hover, a.link-card:hover { border-color: var(--accent); tr
   .chapter { grid-template-columns: 1fr; gap: 2px; padding-left: 28px; }
   .chapter::before { left: 0; top: 7px; }
   .chapter-when { text-align: left; font-size: 16px; }
+
+  .role { grid-template-columns: 1fr; gap: 2px; }
+  .role h3 { font-size: 19px; }
 }
 
 /* Small phones: menu moves under the wordmark */
 @media (max-width: 480px) {
   html { scroll-padding-top: 96px; }
   .site-header { flex-wrap: wrap; gap: 6px; padding-top: 10px; padding-bottom: 10px; }
-  .site-header nav { width: 100%; justify-content: space-between; gap: 8px; }
+  .site-header nav { width: 100%; justify-content: space-between; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+  .site-header nav::-webkit-scrollbar { display: none; }
   .site-header nav a { font-size: 13px; white-space: nowrap; }
+}
+@media (max-width: 360px) {
+  .site-header nav { gap: 10px; justify-content: flex-start; }
+  .site-header nav a { font-size: 12px; }
 }

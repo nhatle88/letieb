@@ -51,6 +51,28 @@
     notes.append(li);
   });
 
+  const roles = document.getElementById("roles");
+  data.career.roles.forEach((r) => {
+    const li = el("li", r.current ? "role is-current" : "role");
+    li.append(el("span", "role-when", r.when));
+    const body = el("div", "role-body");
+    body.append(el("h3", null, r.title));
+    body.append(r.url ? anchor(r.url, "role-org", r.org) : el("span", "role-org", r.org));
+    if (r.text) body.append(el("p", null, r.text));
+    li.append(body);
+    roles.append(li);
+  });
+
+  [["programs", "programs"], ["education", "education"]].forEach(([key, id]) => {
+    const list = document.getElementById(id);
+    data.career[key].forEach((item) => {
+      const li = el("li", "career-item");
+      li.append(el("span", "career-when", item.when), el("span", "career-name", item.name));
+      if (item.text) li.append(el("span", "career-text", item.text));
+      list.append(li);
+    });
+  });
+
   const links = document.getElementById("links");
   data.links.forEach((l) => {
     const li = el("li");
