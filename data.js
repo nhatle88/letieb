@@ -25,6 +25,13 @@ window.LETIEB = {
       tag: "Work",
     },
     {
+      when: "May 6, 2017",
+      title: "Our wedding",
+      text: "Sun married Bee, one year to the day after our romantic dinner. Before that, I made her a website to tell our story.",
+      tag: "Family",
+      link: { label: "Sun & Bee", url: "sunandbee/" },
+    },
+    {
       when: "2019",
       title: "Writing for myself",
       text: "I started keeping notes. Writing became how I think and how I remember.",
