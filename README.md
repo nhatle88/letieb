@@ -18,6 +18,8 @@ A plain static site with no build step. Open `index.html` in a browser to see it
 - **New place to link to:** add an entry to `links`. An entry with `url: null` shows as a "coming soon" card.
 - **Featured note:** add an entry to `notes`.
 
+After changing `data.js`, `main.js` or `styles.css`, bump the `?v=` value on their tags in `index.html` (any new text works, such as today's date). Otherwise visitors' browsers can keep showing the old version for a while.
+
 ## Publishing
 
 Upload the whole folder to any static host (GitHub Pages, Netlify, Cloudflare Pages, Vercel), then point `letieb.com` at it.
