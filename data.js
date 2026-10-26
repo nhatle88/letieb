@@ -167,15 +167,17 @@ window.LETIEB = {
     { title: "I can't control.", date: "May 2025", hook: "On time, and letting go of what isn't mine to hold.", url: "https://nhat.substack.com/p/i-cant-control" },
   ],
 
-  // Links out. Set url to null for a "coming soon" card.
+  // Links out, named for what they hold rather than where they're hosted.
+  // Set url to null for a "coming soon" card.
   links: [
-    { name: "LinkedIn", text: "My work and career", url: "https://www.linkedin.com/in/nhatle88" },
-    { name: "Substack", text: "My notes and stories", url: "https://nhat.substack.com/" },
-    { name: "Email", text: "Say hello", url: "mailto:lehoangnhat88@gmail.com" },
+    { name: "Career", text: "My work, on LinkedIn", url: "https://www.linkedin.com/in/nhatle88" },
+    { name: "Notes", text: "My writing, on Substack", url: "https://nhat.substack.com/" },
+    { name: "Code", text: "My projects, on GitHub", url: "https://github.com/nhatle88" },
     { name: "Books", text: "Reading tracker · sign in", url: "https://books.letieb.com" },
-    { name: "Finance", text: "Family finances · sign in", url: "https://finance.letieb.com" },
     { name: "Math", text: "Science and math, as simulations", url: "https://math.letieb.com" },
     { name: "Music", text: "BassLine: practise bass, write lines", url: "https://music.letieb.com" },
-    { name: "More to come", text: "Photos, books, projects…", url: null },
+    { name: "Finance", text: "Family finances · sign in", url: "https://finance.letieb.com" },
+    { name: "Email", text: "Say hello", url: "mailto:lehoangnhat88@gmail.com" },
+    { name: "More to come", text: "Photos, projects…", url: null },
   ],
 };

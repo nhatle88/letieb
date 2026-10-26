@@ -364,7 +364,7 @@ a.theme:hover, a.note:hover, a.link-card:hover { border-color: var(--accent); tr
 .more-link:hover { text-decoration: underline; }
 
 /* Elsewhere */
-.links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .link-name { font-family: var(--serif); font-size: 24px; }
 .link-text { color: var(--ink-soft); font-size: 15px; }
 .link-card.is-soon { background: transparent; border-style: dashed; color: var(--ink-faint); }
