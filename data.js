@@ -1,8 +1,42 @@
 // Everything that grows over time lives here.
-// To add a chapter, note or link, copy one entry and edit it. No other file needs to change.
+// To add a family member, chapter, note or room, copy one entry and edit it.
+// After editing, bump the ?v= value in index.html so browsers load the new file.
 
 window.LETIEB = {
-  // Career, from LinkedIn. Roles newest first; current: true highlights a role.
+  // ---- The house: the verse it stands on and who lives in it ----
+  house: {
+    verse: {
+      text: "As for me and my house, we will serve the LORD.",
+      ref: "Joshua 24:15",
+      translation: "KJV",
+    },
+    // soon: true draws the card as "being prepared". link is optional.
+    members: [
+      {
+        mark: "S",
+        name: "Sun",
+        role: "Chris · husband and father",
+        text: "Builder and writer. I keep the notes, the timeline and the keys to this house.",
+        link: { label: "My story", url: "#story" },
+      },
+      {
+        mark: "B",
+        name: "Bee",
+        role: "Wife and mother",
+        text: "Our adventure together began in 2015. We were married on May 6, 2017.",
+        link: { label: "Our love story", url: "sunandbee/" },
+      },
+      {
+        mark: "+",
+        name: "Our children",
+        role: "The next generation",
+        text: "Two little ones. Their corner of the house is being prepared.",
+        soon: true,
+      },
+    ],
+  },
+
+  // ---- Career, from LinkedIn. Roles newest first; current: true highlights a role ----
   career: {
     roles: [
       {
@@ -64,8 +98,7 @@ window.LETIEB = {
     ],
   },
 
-  // Life timeline, oldest first. tag: Family | Work | Growth | Travel | Faith
-  // link is optional.
+  // ---- Life timeline, oldest first. tag: Family | Work | Growth | Travel | Faith. link is optional ----
   chapters: [
     {
       when: "Childhood",
@@ -144,12 +177,12 @@ window.LETIEB = {
     {
       when: "2026",
       title: "Letieb",
-      text: "A home for all of it.",
-      tag: "Growth",
+      text: "A house for all of it, and for the family who lives in it.",
+      tag: "Family",
     },
   ],
 
-  // What I care about
+  // ---- What I care about ----
   themes: [
     { name: "Time", text: "It moves too fast. I write to slow it down.", url: "https://nhat.substack.com/p/i-cant-control" },
     { name: "Faith", text: "Gratitude first, every day.", url: "https://nhat.substack.com/p/rejoice-in-the-lord-always-b2f3ec4a7a5b" },
@@ -159,7 +192,7 @@ window.LETIEB = {
     { name: "Reading", text: "Books that change how I see.", url: "https://nhat.substack.com/p/the-innovation-stack-4dc93855d78" },
   ],
 
-  // Selected writing
+  // ---- Selected writing ----
   notes: [
     { title: "The Flying Ship", date: "Oct 2024", hook: "A fable about dreams, courage and the people who sail with you.", url: "https://nhat.substack.com/p/the-flying-ship" },
     { title: "What changed me significantly?", date: "Sep 2021", hook: "Ten years of startups, and what they taught me about why I build.", url: "https://nhat.substack.com/p/what-changed-me-significantly-e8c16d660da5" },
@@ -167,17 +200,36 @@ window.LETIEB = {
     { title: "I can't control.", date: "May 2025", hook: "On time, and letting go of what isn't mine to hold.", url: "https://nhat.substack.com/p/i-cant-control" },
   ],
 
-  // Links out, named for what they hold rather than where they're hosted.
-  // Set url to null for a "coming soon" card.
-  links: [
-    { name: "Career", text: "My work, on LinkedIn", url: "https://www.linkedin.com/in/nhatle88" },
-    { name: "Notes", text: "My writing, on Substack", url: "https://nhat.substack.com/" },
-    { name: "Code", text: "My projects, on GitHub", url: "https://github.com/nhatle88" },
-    { name: "Books", text: "Reading tracker · sign in", url: "https://books.letieb.com" },
-    { name: "Math", text: "Science and math, as simulations", url: "https://math.letieb.com" },
-    { name: "Music", text: "BassLine: practise bass, write lines", url: "https://music.letieb.com" },
-    { name: "Finance", text: "Family finances · sign in", url: "https://finance.letieb.com" },
-    { name: "Email", text: "Say hello", url: "mailto:lehoangnhat88@gmail.com" },
-    { name: "More to come", text: "Photos, projects…", url: null },
+  // ---- Rooms: every part of life, grouped by who can walk in ----
+  // lock: true marks a room that needs a sign-in. url: null marks one that is still being built.
+  rooms: [
+    {
+      group: "Open doors",
+      hint: "Anyone can walk in.",
+      items: [
+        { name: "Career", text: "My work, on LinkedIn", url: "https://www.linkedin.com/in/nhatle88" },
+        { name: "Notes", text: "My writing, on Substack", url: "https://nhat.substack.com/" },
+        { name: "Code", text: "My projects, on GitHub", url: "https://github.com/nhatle88" },
+        { name: "Math", text: "Science and math, as simulations", url: "https://math.letieb.com" },
+        { name: "Music", text: "BassLine: practise bass, write lines", url: "https://music.letieb.com" },
+        { name: "Sun & Bee", text: "Our love story, written in 2016", url: "sunandbee/" },
+      ],
+    },
+    {
+      group: "Family rooms",
+      hint: "Kept behind a key.",
+      items: [
+        { name: "Books", text: "My reading tracker", url: "https://books.letieb.com", lock: true },
+        { name: "Finance", text: "Our family finances", url: "https://finance.letieb.com", lock: true },
+      ],
+    },
+    {
+      group: "Being built",
+      hint: "Rooms we are still preparing.",
+      items: [
+        { name: "Health", text: "Body, movement and rest", url: null },
+        { name: "More to come", text: "Photos, projects…", url: null },
+      ],
+    },
   ],
 };

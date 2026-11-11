@@ -4,29 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Letieb · Chris Nhat Le</title>
-  <meta name="description" content="Letieb is the personal home of Chris Nhat Le: stories, notes, growth, work and family, from Ho Chi Minh City.">
+  <meta name="description" content="Letieb is the house of Chris Nhat Le and his family: our story, memories, work, books and notes, kept as a legacy. From Ho Chi Minh City.">
   <meta property="og:title" content="Letieb · Chris Nhat Le">
-  <meta property="og:description" content="Stories, notes, growth and work: a small home for my life.">
+  <meta property="og:description" content="As for me and my house, we will serve the LORD. A house for our family's story.">
   <meta property="og:image" content="https://letieb.com/images/portrait.jpg">
   <meta property="og:url" content="https://letieb.com/">
+  <meta name="theme-color" content="#f7f3ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1b1815" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
   <!-- Bump ?v= whenever styles.css, data.js or main.js change, so browsers fetch the new files -->
-  <link rel="stylesheet" href="styles.css?v=2026-10-26c">
+  <link rel="stylesheet" href="styles.css?v=2026-11-11">
 </head>
 <body>
   <header class="site-header">
     <a class="wordmark" href="#top">Letieb</a>
-    <nav aria-label="Sections">
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Sections">
+      <a href="#family">Family</a>
       <a href="#story">Story</a>
       <a href="#career">Career</a>
       <a href="#chapters">Chapters</a>
-      <a href="#notes">Notes</a>
       <a href="#books">Books</a>
-      <a href="#elsewhere">Elsewhere</a>
-      <a href="sunandbee/">Sun &amp; Bee</a>
+      <a href="#notes">Notes</a>
+      <a href="#rooms">Rooms</a>
     </nav>
   </header>
 
@@ -34,14 +37,31 @@
     <!-- Welcome -->
     <section class="hero">
       <div class="hero-text">
-        <p class="eyebrow">A home for my stories</p>
+        <p class="eyebrow">A house for our story</p>
         <h1>Chris Nhat Le</h1>
-        <p class="lede">Builder, writer and father from Ho Chi Minh City. This is where I keep the story of my life, and where I point to the places the rest of it lives.</p>
-        <p class="meaning"><strong>Why Letieb?</strong> Read it backwards: <em>Beitel</em>, a home of God. This site is a small home for my life: the stories, notes, growth and work I want to keep.</p>
+        <p class="lede">Builder, writer, husband and father from Ho Chi Minh City. Letieb is where I keep our family's story, and the doors to everything else I do.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#family">Meet the family</a>
+          <a class="button" href="#rooms">Walk through the rooms</a>
+        </div>
       </div>
       <figure class="portrait">
         <img src="images/portrait.jpg" alt="Portrait of Chris Nhat Le" width="900" height="1350">
       </figure>
+    </section>
+
+    <!-- The house: verse, meaning and family. Verse and members come from data.js -->
+    <section id="family" class="section">
+      <figure class="verse" id="verse"></figure>
+
+      <div class="house">
+        <div class="house-text">
+          <h2>The house</h2>
+          <p>Read <em>Letieb</em> backwards and you get <em>Beitel</em>: Bethel, Hebrew for “House of God”, the name Jacob gave the place where he met God (Genesis 28:19). That is what I want our home to be.</p>
+          <p>This site is that house, written down. It is a legacy: a place to keep the memories and moments of our family, so that our children can walk through it one day.</p>
+        </div>
+        <ul class="members" id="members"></ul>
+      </div>
     </section>
 
     <!-- My story -->
@@ -58,7 +78,7 @@
         </div>
         <div class="story-part">
           <h3>Now</h3>
-          <p>Today I'm a father, still building and still writing. I keep notes about time, mindset, faith and family, mostly for myself, and maybe one day for my children.</p>
+          <p>Today I'm a husband and a father, still building and still writing. I keep notes about time, mindset, faith and family, mostly for myself, and one day for my children.</p>
         </div>
       </div>
 
@@ -91,10 +111,11 @@
       </div>
     </section>
 
-    <!-- Life timeline, rendered from data.js -->
+    <!-- Life timeline with a filter, rendered from data.js -->
     <section id="chapters" class="section">
       <h2>Chapters</h2>
-      <p class="section-intro">The moments that shaped me, from the start until now.</p>
+      <p class="section-intro">The moments that shaped me and our family, from the start until now.</p>
+      <div class="chips" id="chapter-filter" role="group" aria-label="Filter chapters"></div>
       <ol class="timeline" id="timeline"></ol>
     </section>
 
@@ -102,14 +123,6 @@
     <section id="care" class="section">
       <h2>What I care about</h2>
       <ul class="themes" id="themes"></ul>
-    </section>
-
-    <!-- Selected writing, rendered from data.js -->
-    <section id="notes" class="section">
-      <h2>Notes</h2>
-      <p class="section-intro">A few pieces I come back to. Everything else is on Substack.</p>
-      <ul class="notes" id="notes-list"></ul>
-      <a class="more-link" href="https://nhat.substack.com/archive">All notes on Substack →</a>
     </section>
 
     <!-- Books, loaded live from books.letieb.com by main.js -->
@@ -120,23 +133,32 @@
       <a class="more-link" href="https://books.letieb.com">Open my reading tracker →</a>
     </section>
 
-    <!-- Links out, rendered from data.js -->
-    <section id="elsewhere" class="section">
-      <h2>Elsewhere</h2>
-      <p class="section-intro">The rest of my life lives in other places.</p>
-      <ul class="links" id="links"></ul>
+    <!-- Selected writing, rendered from data.js -->
+    <section id="notes" class="section">
+      <h2>Notes</h2>
+      <p class="section-intro">A few pieces I come back to. Everything else is on Substack.</p>
+      <ul class="notes" id="notes-list"></ul>
+      <a class="more-link" href="https://nhat.substack.com/archive" target="_blank" rel="noopener">All notes on Substack →</a>
+    </section>
+
+    <!-- Rooms: every part of life, grouped by who can walk in. Rendered from data.js -->
+    <section id="rooms" class="section">
+      <h2>Rooms</h2>
+      <p class="section-intro">Every part of our life has a room. Some doors are open, some are kept for the family, and some are still being built.</p>
+      <div class="rooms" id="rooms-list"></div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p class="motto">It's my life.</p>
+    <p class="footer-mark">Letieb</p>
+    <p class="footer-meaning">Beitel · House of God</p>
     <p><a href="mailto:lehoangnhat88@gmail.com">lehoangnhat88@gmail.com</a> · Ho Chi Minh City</p>
     <p class="small">© <span id="year">2026</span> Chris Nhat Le · letieb.com</p>
   </footer>
 
   <dialog class="book-dialog" id="book-dialog" aria-labelledby="book-dialog-title"></dialog>
 
-  <script src="data.js?v=2026-10-26c"></script>
-  <script src="main.js?v=2026-10-26c"></script>
+  <script src="data.js?v=2026-11-11"></script>
+  <script src="main.js?v=2026-11-11"></script>
 </body>
 </html>
