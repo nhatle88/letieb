@@ -30,8 +30,8 @@ window.LETIEB = {
         mark: "+",
         name: "Our children",
         role: "The next generation",
-        text: "Two little ones. Their corner of the house is being prepared.",
-        soon: true,
+        text: "Two little ones. Their moments, milestones and letters are kept in the family room.",
+        link: { label: "The family room", url: "https://family.letieb.com" },
       },
     ],
   },
@@ -219,6 +219,7 @@ window.LETIEB = {
       group: "Family rooms",
       hint: "Kept behind a key.",
       items: [
+        { name: "Family", text: "Our moments, photos and letters", url: "https://family.letieb.com", lock: true },
         { name: "Books", text: "My reading tracker", url: "https://books.letieb.com", lock: true },
         { name: "Finance", text: "Our family finances", url: "https://finance.letieb.com", lock: true },
       ],
