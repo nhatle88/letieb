@@ -257,6 +257,67 @@
       });
   }
 
+  // ---- Health: movement only, read live from health.letieb.com when sharing is on there ----
+  // ?health=<origin> points this at a test server, e.g. ?health=http://127.0.0.1:8791
+  function renderHealth() {
+    const HEALTH = new URLSearchParams(location.search).get("health") || "https://health.letieb.com";
+    const short = (iso) => new Date(`${iso}T00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+    const count = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
+
+    const tile = (value, label) => {
+      const li = el("li", "health-tile");
+      li.append(el("span", "health-value", value), el("span", "muted", label));
+      return li;
+    };
+
+    fetch(`${HEALTH}/api/public`)
+      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
+      .then((h) => {
+        if (!h.shared) return; // sharing is off: the section and its menu link stay hidden
+
+        const tiles = el("ul", "health-tiles");
+        tiles.append(
+          tile(`${h.week.minutes} / ${h.goal}`, "active minutes this week"),
+          tile(String(h.streak), h.streak === 1 ? "day in a row" : "days in a row"),
+          tile(String(h.week.sessions), `${h.week.sessions === 1 ? "session" : "sessions"} on ${count(h.week.activeDays, "day")}`)
+        );
+
+        // Twelve weeks of minutes, the tallest bar filling the chart
+        const max = Math.max(h.goal, ...h.weeks.map((w) => w.minutes), 1);
+        const chart = el("div", "health-chart");
+        chart.setAttribute("role", "img");
+        chart.setAttribute("aria-label", "Active minutes a week over the last twelve weeks");
+        h.weeks.forEach((w, i) => {
+          const col = el("div", i === h.weeks.length - 1 ? "health-col is-now" : "health-col");
+          col.title = `Week of ${short(w.start)}: ${w.minutes} min`;
+          const bar = el("div", w.minutes ? (w.minutes >= h.goal ? "health-bar is-met" : "health-bar") : "health-bar is-empty");
+          bar.style.height = `${w.minutes ? Math.max(4, Math.round((w.minutes / max) * 100)) : 0}%`;
+          const slot = el("div", "health-slot");
+          slot.append(bar);
+          col.append(slot, el("span", "health-label", i % 3 === (h.weeks.length - 1) % 3 ? short(w.start) : ""));
+          chart.append(col);
+        });
+        const chartWrap = el("div", "health-card");
+        chartWrap.append(el("h3", "label", "Last 12 weeks"), chart);
+
+        const recent = el("ul", "health-recent");
+        h.recent.forEach((a) => {
+          const li = el("li");
+          li.append(el("span", "health-type", a.type), el("span", "muted", short(a.date)), el("span", "health-minutes", `${a.minutes} min`));
+          recent.append(li);
+        });
+        const recentWrap = el("div", "health-card");
+        recentWrap.append(el("h3", "label", "Latest"), recent);
+
+        const columns = el("div", "health-columns");
+        columns.append(chartWrap, recentWrap);
+        $("health-summary").append(tiles, columns);
+        $("health").hidden = false;
+        document.querySelector('.site-nav a[href="#health"]').hidden = false;
+      })
+      .catch(() => {}); // unreachable: the section simply stays hidden
+  }
+
   // ---- Menu: a drop-down on phones, and a mark on the section being read ----
   function setUpMenu() {
     const toggle = $("menu-toggle");
@@ -287,7 +348,7 @@
   }
 
   // ---- Build the page. Each part is independent, so one failing never blanks the rest ----
-  [renderHouse, renderCareer, renderChapters, renderThemes, renderNotes, renderRooms, renderBooks, setUpMenu].forEach((part) => {
+  [renderHouse, renderCareer, renderChapters, renderThemes, renderNotes, renderRooms, renderBooks, renderHealth, setUpMenu].forEach((part) => {
     try {
       part();
     } catch (error) {

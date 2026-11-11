@@ -422,6 +422,25 @@ a.role-org:hover { text-decoration: underline; }
 .book-note cite { display: block; margin-top: 6px; font-style: normal; font-size: 13px; color: var(--ink-faint); }
 .book-dialog-notes .more-link { margin-top: 6px; }
 
+/* Health */
+.health { display: flex; flex-direction: column; gap: 14px; }
+.health-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.health-tile, .health-card { display: flex; flex-direction: column; gap: 2px; padding: 20px 22px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.health-value { font-family: var(--serif); font-size: clamp(26px, 4.4vw, 40px); line-height: 1.1; white-space: nowrap; }
+.health-tile .muted, .health-recent .muted { font-size: 14px; }
+.health-columns { display: grid; grid-template-columns: 1.6fr 1fr; gap: 14px; }
+.health-chart { display: flex; align-items: stretch; gap: 5px; height: 150px; }
+.health-col { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.health-slot { flex: 1; width: 100%; max-width: 36px; display: flex; align-items: flex-end; }
+.health-bar { width: 100%; border-radius: 4px 4px 2px 2px; background: color-mix(in srgb, var(--accent) 45%, var(--paper-2)); }
+.health-bar.is-met, .health-col.is-now .health-bar:not(.is-empty) { background: var(--accent); }
+.health-bar.is-empty { height: 3px !important; background: var(--line); border-radius: 2px; }
+.health-label { height: 14px; font-size: 11px; line-height: 14px; color: var(--ink-faint); white-space: nowrap; }
+.health-recent li { display: flex; align-items: baseline; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line); }
+.health-recent li:first-child { border-top: none; padding-top: 0; }
+.health-type { font-weight: 500; }
+.health-minutes { margin-left: auto; font-family: var(--serif); font-size: 18px; }
+
 /* Rooms */
 .rooms { display: flex; flex-direction: column; gap: 36px; }
 .room-group-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin-bottom: 14px; }
@@ -458,6 +477,7 @@ a.role-org:hover { text-decoration: underline; }
 /* ---------- 7. Smaller screens ---------- */
 @media (max-width: 860px) {
   .house { grid-template-columns: 1fr; }
+  .health-columns { grid-template-columns: 1fr; }
   .story { grid-template-columns: 1fr; }
   .career { grid-template-columns: 1fr; }
   .themes, .room-list { grid-template-columns: 1fr 1fr; }
@@ -489,6 +509,8 @@ a.role-org:hover { text-decoration: underline; }
   .hero { grid-template-columns: 1fr; padding-top: 32px; }
   .portrait { order: -1; max-width: 260px; }
   .workspace-grid, .notes, .themes, .room-list { grid-template-columns: 1fr; }
+  .health-tiles { grid-template-columns: 1fr; }
+  .health-value { font-size: 34px; }
 
   .timeline::before { left: 4px; }
   .chapter { grid-template-columns: 1fr; gap: 2px; padding-left: 28px; }

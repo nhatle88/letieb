@@ -221,6 +221,7 @@ window.LETIEB = {
       items: [
         { name: "Family", text: "Our moments, photos and letters", url: "https://family.letieb.com", lock: true },
         { name: "Books", text: "My reading tracker", url: "https://books.letieb.com", lock: true },
+        { name: "Health", text: "Body, movement and rest", url: "https://health.letieb.com", lock: true },
         { name: "Finance", text: "Our family finances", url: "https://finance.letieb.com", lock: true },
       ],
     },
@@ -228,7 +229,6 @@ window.LETIEB = {
       group: "Being built",
       hint: "Rooms we are still preparing.",
       items: [
-        { name: "Health", text: "Body, movement and rest", url: null },
         { name: "More to come", text: "Photos, projects…", url: null },
       ],
     },
